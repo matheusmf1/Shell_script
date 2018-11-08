@@ -94,9 +94,11 @@ while [ $i -le $num ];
 				#echo $result
 				
 				if [ "$result" -eq 1 ]; then	
+					echo
 					echo "CPF válido"						
 					c1=2
 				else
+					echo
 					echo "CPF inválido"
 					c1=1
 				fi			
