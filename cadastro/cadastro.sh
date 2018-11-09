@@ -27,6 +27,7 @@ menu
 
 }
 
+
 menu(){
 echo
 echo "Escolha uma opção abaixo:"
@@ -34,7 +35,7 @@ echo "1 - Cadastrar usuario"
 echo "2 - Deletar usuario"
 echo "3 - Buscar por usuario"
 echo "4 - Visualizar todos os cadastros"
-echo "5 - Atualizar nome"
+echo "5 - Atualizar cadastro"
 echo "6 - Para sair"
 
 read op;
@@ -109,7 +110,7 @@ while [ $i -le $num ];
 	
 	echo $nome $sobrenome $cpf >> arquivo.cad
 	((i=$i+1))
-	done
+
 echo
 echo "***************************************"
 echo "*
@@ -117,6 +118,9 @@ echo "*
 *"
 echo "***************************************"
 menu
+
+done
+
 }
 
 deletar(){
@@ -153,15 +157,24 @@ atualizar(){
 clear
 cat arquivo.cad
 echo
-echo "Qual usuario voce deseja atualizar?"
+echo "Qual o nome do usuario voce deseja atualizar?"
 echo
 read antigo
+echo
+echo "Sobrenome Antigo"
+echo
+read antigo2
 echo
 echo "Digite novo nome"
 echo
 read novo
 echo
+echo "Digite novo sobrenome"
+echo
+read novo2
 sed -i 's/'$antigo'/'$novo'/g' arquivo.cad
+sed -i 's/'$antigo2'/'$novo2'/g' arquivo.6cad
+
 echo
 echo "Cadastro sobrescrito com sucesso"
 echo
