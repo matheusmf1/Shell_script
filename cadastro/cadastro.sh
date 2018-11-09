@@ -27,7 +27,6 @@ menu
 
 }
 
-
 menu(){
 echo
 echo "Escolha uma opção abaixo:"
@@ -35,7 +34,8 @@ echo "1 - Cadastrar usuario"
 echo "2 - Deletar usuario"
 echo "3 - Buscar por usuario"
 echo "4 - Visualizar todos os cadastros"
-echo "5 - Para sair"
+echo "5 - Atualizar nome"
+echo "6 - Para sair"
 
 read op;
 case $op in
@@ -49,6 +49,8 @@ buscar ;;
 "4")
 getAll ;;
 "5")
+atualizar ;;
+"6")
 exit ;;
 esac
 
@@ -107,7 +109,7 @@ while [ $i -le $num ];
 	
 	echo $nome $sobrenome $cpf >> arquivo.cad
 	((i=$i+1))
-
+	done
 echo
 echo "***************************************"
 echo "*
@@ -115,9 +117,6 @@ echo "*
 *"
 echo "***************************************"
 menu
-
-done
-
 }
 
 deletar(){
@@ -152,6 +151,8 @@ menu
 
 atualizar(){
 clear
+cat arquivo.cad
+echo
 echo "Qual usuario voce deseja atualizar?"
 echo
 read antigo
